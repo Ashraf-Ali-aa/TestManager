@@ -1,0 +1,98 @@
+.sidr {
+    background: #fff;
+    display: block;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 99999;
+    width: 370px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sidr ul {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidr .sidr-inner {
+    padding: 0 0 15px;
+}
+
+.sidr-class-sidr-button-close {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.admin-bar .sidr-class-sidr-button-close {
+    margin-top: 46px;
+}
+
+.sidr.right {
+    left: auto;
+    right: -370px;
+}
+
+.sidr.left {
+    left: -370px;
+    right: auto;
+}
+
+.sidr {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sidr-exit {
+    width: 28px;
+    height: 25px;
+    margin: 20px auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.sidr-exit span {
+    width: 28px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    display: block;
+    transform: rotate(0);
+    -o-transform: rotate(0);
+    -ms-transform: rotate(0);
+    -moz-transform: rotate(0);
+    -webkit-transform: rotate(0);
+    transition: all 0.28s cubic-bezier(.01, .94, .48, .99) 0s;
+    -o-transition: all 0.28s cubic-bezier(.01, .94, .48, .99) 0s;
+    -moz-transition: all 0.28s cubic-bezier(.01, .94, .48, .99) 0s;
+    -webkit-transition: all 0.28s cubic-bezier(.01, .94, .48, .99) 0s;
+}
+
+.sidr-open .sidr-exit span:first-child {
+    transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transition: all 0.2s cubic-bezier(.01, .94, .48, .99) 0.4s;
+    -o-transition: all 0.2s cubic-bezier(.01, .94, .48, .99) 0.4s;
+    -moz-transition: all 0.2s cubic-bezier(.01, .94, .48, .99) 0.4s;
+    -webkit-transition: all 0.2s cubic-bezier(.01, .94, .48, .99) 0.4s;
+}
+
+.sidr-open .sidr-exit span:last-child {
+    transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all 0.3s cubic-bezier(.01, .94, .48, .99) 0.4s;
+    -o-transition: all 0.3s cubic-bezier(.01, .94, .48, .99) 0.4s;
+    -moz-transition: all 0.3s cubic-bezier(.01, .94, .48, .99) 0.4s;
+    -webkit-transition: all 0.3s cubic-bezier(.01, .94, .48, .99) 0.4s;
+}

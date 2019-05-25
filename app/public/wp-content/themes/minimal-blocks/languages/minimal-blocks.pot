@@ -1,0 +1,1146 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Minimal Blocks\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 11:49+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.2; wp-5.2.1"
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:121 inc/template-tags.php:134
+msgid " "
+msgstr ""
+
+#. 1: list of categories.
+#: inc/template-tags.php:73
+#, php-format
+msgid " %1$s"
+msgstr ""
+
+#: inc/template-tags.php:102
+#, php-format
+msgid " %s"
+msgstr ""
+
+#: inc/template-tags.php:134
+msgid "% Comments"
+msgstr ""
+
+#. 1: list of tags.
+#: inc/template-tags.php:123 inc/template-tags.php:151
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: inc/about/about.php:26
+#, php-format
+msgid ""
+"%1$s is now installed and ready to use. We want to make sure you have the "
+"best experience using the theme and that is why we gathered here all the "
+"necessary information for you. Thanks for using our theme!"
+msgstr ""
+
+#: inc/posts-meta-fields.php:22
+#, php-format
+msgid "%1s Settings"
+msgstr ""
+
+#. number of items in the mini cart.
+#: inc/woocommerce.php:210
+#, php-format
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:152
+msgctxt "%s font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/posts-meta-fields.php:54 inc/posts-meta-fields.php:70
+msgid "&mdash; Select &mdash;"
+msgstr ""
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:64
+msgid ", "
+msgstr ""
+
+#: inc/about/about.php:154
+msgid "1 Click Demo Import"
+msgstr ""
+
+#: inc/template-tags.php:134
+msgid "1 Comment"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:247
+msgid "404 Not Found"
+msgstr ""
+
+#: 404.php:13
+msgid "404 not found. Maybe try a search?"
+msgstr ""
+
+#: inc/about/about.php:111 inc/about/about.php:122
+msgid "Activate"
+msgstr ""
+
+#: inc/about/class.about.php:822
+msgid "Activating"
+msgstr ""
+
+#: inc/about/about.php:81
+msgid "Add Widgets"
+msgstr ""
+
+#: inc/about/about.php:215
+msgid ""
+"Adjust your fonts by taking advantage of a playground with 600+ fonts "
+"varieties you can wisely choose from at any moment."
+msgstr ""
+
+#: inc/about/about.php:197
+msgid ""
+"Advance control for each element gives you different way of customization "
+"and maintained you site as you like and makes you feel different."
+msgstr ""
+
+#: inc/about/about.php:196
+msgid "Advance Customizer Options"
+msgstr ""
+
+#: inc/about/about.php:202
+msgid "Advance Pagination"
+msgstr ""
+
+#: inc/customizer/options.php:663
+msgid "Advanced"
+msgstr ""
+
+#: inc/about/about.php:214
+msgid "Advanced Typography Settings"
+msgstr ""
+
+#: inc/customizer/options.php:657
+#, php-format
+msgid "Advanced: Requires %1$sBreadcrumb NavXT%2$s plugin"
+msgstr ""
+
+#: inc/about/about.php:108
+msgid "Already activated"
+msgstr ""
+
+#: inc/customizer/options.php:720
+msgid "Archive Options"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:248
+msgid "Archives"
+msgstr ""
+
+#: inc/widgets/author-info.php:112
+msgid "Author Image:"
+msgstr ""
+
+#: inc/widgets/author-info.php:97
+msgid "Author Name:"
+msgstr ""
+
+#: inc/customizer/options.php:54
+msgid "Banner Overlay Color"
+msgstr ""
+
+#: inc/customizer/options.php:127 inc/about/about.php:178
+msgid "Banner Slider Options"
+msgstr ""
+
+#: inc/customizer/options.php:93
+msgid "Body Text Color"
+msgstr ""
+
+#: inc/customizer/options.php:640
+msgid "Breadcrumb Options"
+msgstr ""
+
+#: inc/customizer/options.php:656
+msgid "Breadcrumb Type"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:245
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:244
+msgid "Browse:"
+msgstr ""
+
+#: inc/customizer/options.php:629
+msgid "Button Click Ajax Load"
+msgstr ""
+
+#: inc/customizer/options.php:249
+msgid "Carousel Section Title"
+msgstr ""
+
+#: inc/customizer/options.php:215
+msgid "Carousel Slider Options"
+msgstr ""
+
+#: inc/customizer/options.php:163
+msgid "Choose Banner Slider category"
+msgstr ""
+
+#: inc/customizer/options.php:269
+msgid "Choose Carousel Slider category"
+msgstr ""
+
+#: inc/widgets/author-info.php:115
+msgid "Choose Image"
+msgstr ""
+
+#: inc/customizer/options.php:370
+msgid "Choose Recommended Post"
+msgstr ""
+
+#: comments.php:64
+msgid "Comments are closed."
+msgstr ""
+
+#. 1: comment count number, 2: title.
+#: comments.php:40
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/about/about.php:96 inc/about/about.php:99
+msgid "Contact Support"
+msgstr ""
+
+#: inc/customizer/options.php:106 inc/customizer/options.php:117
+msgid "Contains all front page settings"
+msgstr ""
+
+#: inc/customizer/options.php:456
+msgid "Contains all theme settings"
+msgstr ""
+
+#: inc/posts-meta-fields.php:59 inc/customizer/options.php:442
+#: inc/customizer/options.php:540
+msgid "Content - Primary Sidebar"
+msgstr ""
+
+#: inc/widgets/tab-posts.php:102 inc/widgets/tab-posts.php:117
+msgid "Content Length (Set to 0 if no required):"
+msgstr ""
+
+#. %s: Name of current post. Only visible to screen readers
+#: template-parts/content-quote.php:38
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: inc/customizer/defaults.php:80
+msgid "Copyright &copy; All rights reserved."
+msgstr ""
+
+#: inc/customizer/options.php:937
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/about/about.php:68
+msgid "Customize"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:760
+#: assets/lib/breadcrumbs/breadcrumbs.php:1190
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
+#: inc/about/about.php:142
+msgid "Daring Design for Devoted Readers"
+msgstr ""
+
+#: inc/about/about.php:112 inc/about/about.php:123
+msgid "Deactivate"
+msgstr ""
+
+#: inc/customizer/options.php:516
+msgid "Default"
+msgstr ""
+
+#: inc/customizer/options.php:627
+msgid "Default (Older / Newer Post)"
+msgstr ""
+
+#: inc/ocdi.php:21
+msgid "Default Theme Demo Content"
+msgstr ""
+
+#: inc/about/about.php:73
+msgid "Demo Content"
+msgstr ""
+
+#: inc/customizer/options.php:661
+msgid "Disabled"
+msgstr ""
+
+#: inc/widgets/author-info.php:15
+msgid "Displays author short info."
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:30
+msgid "Displays items on footer first column."
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:39
+msgid "Displays items on footer second column."
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:48
+msgid "Displays items on footer third column."
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:12 inc/widgets/widget-sidebars.php:21
+msgid "Displays items on sidebar."
+msgstr ""
+
+#: inc/widgets/tab-posts.php:15
+msgid "Displays posts in tabs"
+msgstr ""
+
+#: inc/widgets/social-menu.php:15
+msgid "Displays social menu if you have set it(social menu)"
+msgstr ""
+
+#. %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:160 template-parts/content-page.php:48
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: inc/customizer/options.php:143
+msgid "Enable Banner Slider"
+msgstr ""
+
+#: inc/customizer/options.php:231
+msgid "Enable Carousel Slider"
+msgstr ""
+
+#: inc/customizer/options.php:199 inc/customizer/options.php:305
+msgid "Enable Category Info"
+msgstr ""
+
+#: inc/customizer/options.php:38
+msgid "Enable Header Overlay"
+msgstr ""
+
+#: inc/customizer/options.php:833
+msgid "Enable Mailchimp Subscription"
+msgstr ""
+
+#: inc/customizer/options.php:408
+msgid "Enable Meta Info"
+msgstr ""
+
+#: inc/customizer/options.php:481
+msgid "Enable Preloader"
+msgstr ""
+
+#: inc/customizer/options.php:335
+msgid "Enable Recommended Post"
+msgstr ""
+
+#: inc/customizer/options.php:801
+msgid "Excerpt Length"
+msgstr ""
+
+#: inc/customizer/options.php:785
+msgid "Excerpt Options"
+msgstr ""
+
+#: inc/widgets/author-info.php:136
+msgid "Facebook URL:"
+msgstr ""
+
+#: inc/posts-meta-fields.php:67
+msgid "Featured Image on Detail Page"
+msgstr ""
+
+#: inc/about/about.php:208
+msgid "Flexible Color Scheme"
+msgstr ""
+
+#: inc/about/about.php:184
+msgid "Flexible Home Page Design"
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:28
+msgid "Footer Column One"
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:46
+msgid "Footer Column Three"
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:37
+msgid "Footer Column Two"
+msgstr ""
+
+#: functions.php:52
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/customizer/options.php:921
+msgid "Footer Options"
+msgstr ""
+
+#: inc/customizer/options.php:319
+msgid "Footer Recommendation Options"
+msgstr ""
+
+#: inc/about/about.php:33
+msgid "Free Vs Pro"
+msgstr ""
+
+#: inc/customizer/options.php:438
+msgid "Front Page Layout"
+msgstr ""
+
+#: inc/customizer/options.php:422
+msgid "Front Page Layout Options"
+msgstr ""
+
+#: inc/customizer/options.php:105
+msgid "Front Page Options"
+msgstr ""
+
+#: inc/helpers.php:239
+msgid "Full Image"
+msgstr ""
+
+#. View link
+#: inc/about/about.php:139
+#, php-format
+msgid "Get %s"
+msgstr ""
+
+#: inc/about/about.php:30
+msgid "Getting Started"
+msgstr ""
+
+#: inc/customizer/options.php:536
+msgid "Global Layout"
+msgstr ""
+
+#: inc/about/about.php:98
+msgid ""
+"Got theme support question or found bug or got some feedbacks? Best place to "
+"ask your query is the dedicated Support forum for the theme."
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:246
+msgid "Home"
+msgstr ""
+
+#: inc/customizer/options.php:116
+msgid "Home/Front Page Sections Settings"
+msgstr ""
+
+#: inc/customizer/defaults.php:26
+msgid "Hot Topics"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:742
+msgctxt "hour archives time format"
+msgid "g a"
+msgstr ""
+
+#. Author URI of the theme
+msgid "https://thememattic.com"
+msgstr ""
+
+#. URI of the theme
+msgid "https://thememattic.com/theme/minimal-blocks"
+msgstr ""
+
+#: inc/customizer/options.php:558
+msgid "Image in Archive Page"
+msgstr ""
+
+#: inc/customizer/options.php:594
+msgid "Image in Single Page"
+msgstr ""
+
+#: inc/customizer/options.php:576
+msgid "Image in Single Posts"
+msgstr ""
+
+#: inc/about/about.php:155
+msgid ""
+"In just a few minutes, your site will be ready with exactly the same layout "
+"with the demo. All you need to do is just replace sample content with yours "
+"to get started."
+msgstr ""
+
+#: inc/customizer/options.php:630
+msgid "Infinite Scroll Ajax Load"
+msgstr ""
+
+#: inc/widgets/author-info.php:152
+msgid "Instagram URL:"
+msgstr ""
+
+#: inc/about/about.php:110 inc/about/about.php:121
+msgid "Install and Activate"
+msgstr ""
+
+#: inc/about/about.php:127
+msgid ""
+"It is only recommended when you need the site as like our demos along with "
+"the demo content"
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: inc/customizer/options.php:493
+msgid "Layout Options"
+msgstr ""
+
+#: inc/about/about.php:166
+msgid "Light & Dark mode in single click"
+msgstr ""
+
+#. used between list items, there is a space after the comma
+#: inc/template-tags.php:148
+msgctxt "list item separator"
+msgid " "
+msgstr ""
+
+#: inc/customizer/options.php:908
+msgid "Mailchimp Background Color"
+msgstr ""
+
+#: inc/about/about.php:226
+msgid "Mailchimp Feature"
+msgstr ""
+
+#: inc/hooks/tgm.php:21
+msgid "MailChimp for WordPress"
+msgstr ""
+
+#: inc/customizer/options.php:815
+msgid "Mailchimp Options"
+msgstr ""
+
+#: inc/about/about.php:232
+msgid "Mailchimp Pop Up and Instagram Feature"
+msgstr ""
+
+#: inc/customizer/options.php:870
+msgid "Mailchimp Sub Title"
+msgstr ""
+
+#: inc/customizer/options.php:889
+msgid "Mailchimp Subscription Form Shortcode"
+msgstr ""
+
+#: inc/customizer/options.php:851
+msgid "Mailchimp Title"
+msgstr ""
+
+#: inc/customizer/options.php:511
+msgid "Masonry Animation"
+msgstr ""
+
+#: inc/about/about.php:209
+msgid ""
+"Match your unique style in an easy and smart way by using an intuitive "
+"interface that you can fine-tune it until it fully represents you and "
+"matches your particular blogging needs."
+msgstr ""
+
+#: inc/widgets/author-info.php:14
+msgid "MB: Author Info"
+msgstr ""
+
+#: inc/widgets/social-menu.php:14
+msgid "MB: Social Menu"
+msgstr ""
+
+#: inc/widgets/tab-posts.php:14
+msgid "MB: Tab Posts"
+msgstr ""
+
+#. Name of the theme
+msgid "Minimal Blocks"
+msgstr ""
+
+#: inc/about/about.php:161
+msgid ""
+"Minimal Blocks comes with a widget-based flexible system which allows you to "
+"add your favourite widgets over the Sidebar as well as on off-canvas too."
+msgstr ""
+
+#: inc/about/about.php:173
+msgid ""
+"Minimal Blocks gives you extra ways to showcase your header with miltiple "
+"layout option you can change it on the basis of your requirement"
+msgstr ""
+
+#: inc/about/about.php:19 inc/about/about.php:21
+msgid "Minimal Blocks Info"
+msgstr ""
+
+#: inc/about/about.php:149
+msgid ""
+"Minimal Blocks makes room for your readers to enjoy your articles on the go, "
+"no matter the device their using. We shaped everything to look amazing to "
+"your audience."
+msgstr ""
+
+#: inc/customizer/init.php:51
+msgid "Minimal Blocks Pro"
+msgstr ""
+
+#: inc/about/about.php:167
+msgid ""
+"Minimal Blocks pro can be switched to dark mode where as Minimal Blocks free "
+"does not has that option"
+msgstr ""
+
+#: inc/about/about.php:143
+msgid ""
+"Minimal Blocks's design helps you stand out from the crowd and create an "
+"experience that your readers will love and talk about. With a flexible home "
+"page you have the chance to easily showcase appealing content with ease."
+msgstr ""
+
+#: inc/about/about.php:227
+msgid ""
+"Minimal Blocks's Pro theme has feature of Mailchimp subscription in your "
+"site footer."
+msgstr ""
+
+#: inc/about/about.php:233
+msgid ""
+"Minimal Blocks's Pro theme has feature of Pop Up Mailchimp subscription as "
+"well as displays your instagram feed images in your site footer."
+msgstr ""
+
+#: inc/about/about.php:179
+msgid ""
+"Minimal Blocks's PRO version comes with more Slider options to display and "
+"filter posts. For instance, you can have far more control on setting the "
+"source of the posts or how they are displayed, everything to push the "
+"content to the right people and promote it by the blink of an eye."
+msgstr ""
+
+#: inc/about/about.php:191
+msgid ""
+"Minimal Blocks's PRO version has a feature to let your viewer know the read "
+"time of the standard article you have posted on the basis of words per "
+"minute which you can control on your customizer ."
+msgstr ""
+
+#: inc/about/about.php:185
+msgid ""
+"Minimal Blocks's PRO version has more control available to enable you to "
+"place widgets on Footer or Below the Post at the end of your articles."
+msgstr ""
+
+#. Minute archive title. %s is the minute time format.
+#: assets/lib/breadcrumbs/breadcrumbs.php:254
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:708
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:725
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: inc/about/about.php:148
+msgid "Mobile-Ready For All Devices"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:759
+#: assets/lib/breadcrumbs/breadcrumbs.php:815
+#: assets/lib/breadcrumbs/breadcrumbs.php:1186
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: inc/about/about.php:172
+msgid "Multiple Header Layout"
+msgstr ""
+
+#: inc/about/about.php:203
+msgid ""
+"Multiple Option of pagination via customizer can be obtained on your site "
+"like Infinite scroll, Ajax Button On Click, Number as well as classical "
+"option are available."
+msgstr ""
+
+#: single.php:31
+msgid "Next"
+msgstr ""
+
+#: single.php:32
+msgid "Next post:"
+msgstr ""
+
+#: inc/about/about.php:238
+msgid "No Credit Footer Link"
+msgstr ""
+
+#: inc/helpers.php:205
+msgid "No Image"
+msgstr ""
+
+#: inc/customizer/options.php:388
+msgid "No of Posts"
+msgstr ""
+
+#: inc/customizer/options.php:180
+msgid "No Of Posts For Banner Slider"
+msgstr ""
+
+#: inc/customizer/options.php:286
+msgid "No of Posts for Carousel Slider"
+msgstr ""
+
+#: inc/widgets/tab-posts.php:96 inc/widgets/tab-posts.php:111
+msgid "No of Posts:"
+msgstr ""
+
+#: inc/posts-meta-fields.php:62 inc/customizer/options.php:444
+#: inc/customizer/options.php:542
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/customizer/options.php:515
+msgid "None"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: inc/customizer/options.php:628
+msgid "Numeric"
+msgstr ""
+
+#: inc/load-posts.php:16
+msgid "Older Posts"
+msgstr ""
+
+#: inc/about/about.php:75 inc/hooks/tgm.php:16
+msgid "One Click Demo Import"
+msgstr ""
+
+#. 1: title.
+#: comments.php:34
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: inc/hooks/inner-header.php:73
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#. %s is the page number.
+#: assets/lib/breadcrumbs/breadcrumbs.php:252
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/posts-meta-fields.php:51
+msgid "Page Layout"
+msgstr ""
+
+#: template-parts/content-gallery.php:47 template-parts/content-page.php:34
+#: template-parts/content.php:46 template-parts/content.php:93
+#: template-parts/content-audio.php:54 template-parts/content-video.php:59
+#: template-parts/content-search.php:61 template-parts/content-quote.php:48
+#: template-parts/content-image.php:52
+msgid "Pages:"
+msgstr ""
+
+#: inc/customizer/options.php:607
+msgid "Pagination Options"
+msgstr ""
+
+#: inc/customizer/options.php:623
+msgid "Pagination Type"
+msgstr ""
+
+#: inc/about/about.php:58
+msgid ""
+"Please check our full documentation for detailed information on how to setup "
+"and customize the theme."
+msgstr ""
+
+#: inc/widgets/tab-posts.php:34 inc/widgets/tab-posts.php:42
+#: inc/widgets/tab-posts.php:92
+msgid "Popular"
+msgstr ""
+
+#. %s: post author.
+#: inc/template-tags.php:51
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr ""
+
+#. %s: post date.
+#: inc/template-tags.php:44
+#, php-format
+msgctxt "post date"
+msgid " %s"
+msgstr ""
+
+#. %s: post date.
+#: inc/template-tags.php:35
+#, php-format
+msgctxt "post date"
+msgid "Published on %s"
+msgstr ""
+
+#: inc/customizer/options.php:465
+msgid "Preloader Options"
+msgstr ""
+
+#: inc/about/about.php:220
+msgid "Premium Support and Assistance"
+msgstr ""
+
+#: single.php:34
+msgid "Previous"
+msgstr ""
+
+#: single.php:35
+msgid "Previous post:"
+msgstr ""
+
+#: functions.php:51 components/aside-panel/panel-main.php:97
+msgid "Primary Menu"
+msgstr ""
+
+#: inc/posts-meta-fields.php:56 inc/customizer/options.php:443
+#: inc/customizer/options.php:541
+msgid "Primary Sidebar - Content"
+msgstr ""
+
+#: template-parts/content.php:55 template-parts/content-search.php:23
+#: template-parts/content-search.php:23 template-parts/content-image.php:61
+#: template-parts/content-image.php:61 inc/customizer/defaults.php:59
+#: inc/hooks/home-grids.php:67 inc/hooks/home-grids.php:67
+msgid "Read More"
+msgstr ""
+
+#: inc/customizer/options.php:771
+msgid "Read More Text Archive"
+msgstr ""
+
+#: inc/about/about.php:190
+msgid "Read Time Calculator"
+msgstr ""
+
+#. 1: link to WP admin new post page.
+#: template-parts/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: inc/widgets/tab-posts.php:46 inc/widgets/tab-posts.php:54
+#: inc/widgets/tab-posts.php:107
+msgid "Recent"
+msgstr ""
+
+#: inc/about/about.php:31
+msgid "Recommended Actions"
+msgstr ""
+
+#: inc/customizer/defaults.php:71
+msgid "Related Articles"
+msgstr ""
+
+#: inc/customizer/options.php:350 inc/customizer/options.php:707
+msgid "Related Posts title"
+msgstr ""
+
+#: inc/widgets/author-info.php:126
+msgctxt "Remove"
+msgid "X"
+msgstr ""
+
+#. %s is the search query. The HTML entities are opening and closing curly quotes.
+#: assets/lib/breadcrumbs/breadcrumbs.php:250
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: inc/hooks/inner-header.php:78
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/widgets/author-info.php:115
+msgid "Select Image"
+msgstr ""
+
+#: inc/about/about.php:78
+msgid "Set Widgets"
+msgstr ""
+
+#: inc/about/about.php:80
+msgid "Set widgets in your sidebar, Offcanvas as well as footer."
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:19
+msgid "Shop Sidebar"
+msgstr ""
+
+#: inc/widgets/author-info.php:105
+msgid "Short Description:"
+msgstr ""
+
+#: inc/customizer/options.php:736
+msgid "Show Description on Archive Pages"
+msgstr ""
+
+#: inc/customizer/options.php:754
+msgid "Show Meta Info on Archive Pages"
+msgstr ""
+
+#: inc/customizer/options.php:689
+msgid "Show related Posts"
+msgstr ""
+
+#: inc/widgets/widget-sidebars.php:10
+msgid "Sidebar"
+msgstr ""
+
+#: inc/customizer/options.php:662
+msgid "Simple"
+msgstr ""
+
+#: inc/customizer/options.php:673
+msgid "Single Post Options"
+msgstr ""
+
+#: inc/customizer/options.php:72
+msgid "Site Title Text Size"
+msgstr ""
+
+#: inc/customizer/options.php:19
+msgid "Site Title/Tagline Color"
+msgstr ""
+
+#: header.php:41
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer/options.php:518
+msgid "Slide Down"
+msgstr ""
+
+#: inc/customizer/options.php:517
+msgid "Slide Up"
+msgstr ""
+
+#: functions.php:53
+msgid "Social Menu"
+msgstr ""
+
+#: inc/widgets/social-menu.php:48
+msgid ""
+"Social menu is not set. You need to create menu and assign it to Social Menu "
+"on Menu Settings."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: inc/customizer/defaults.php:85
+msgid "Subscribe To  Our Newsletter"
+msgstr ""
+
+#: inc/about/about.php:39
+msgid "Theme Details"
+msgstr ""
+
+#: inc/about/about.php:56
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/customizer/options.php:455 inc/about/about.php:65
+msgid "Theme Options"
+msgstr ""
+
+#: inc/about/about.php:87
+msgid "Theme Preview"
+msgstr ""
+
+#: inc/about/about.php:107
+msgid ""
+"Theme supports some helpful WordPress plugins to enhance your site. But, "
+"please enable only those plugins which you need in your site. For example, "
+"enable WooCommerce only if you are using e-commerce."
+msgstr ""
+
+#: inc/about/about.php:67
+msgid ""
+"Theme uses Customizer API for theme options. Using the Customizer you can "
+"easily customize different aspects of the theme."
+msgstr ""
+
+#: footer.php:106
+#, php-format
+msgid "Theme: %1$s by %2$s"
+msgstr ""
+
+#. Author of the theme
+msgid "Thememattic"
+msgstr ""
+
+#: inc/widgets/author-info.php:89 inc/widgets/social-menu.php:70
+msgid "Title:"
+msgstr ""
+
+#: inc/about/about.php:75
+#, php-format
+msgid ""
+"To import sample demo content, %1$s plugin should be installed and activated."
+" After plugin is activated, visit Import Demo Data menu under Appearance."
+msgstr ""
+
+#: inc/widgets/author-info.php:144
+msgid "Twitter URL:"
+msgstr ""
+
+#: inc/customizer/init.php:52
+msgid "Upgrade To Pro"
+msgstr ""
+
+#: inc/widgets/author-info.php:115
+msgid "Upload"
+msgstr ""
+
+#: inc/about/about.php:32
+msgid "Useful Plugins"
+msgstr ""
+
+#: inc/about/about.php:109
+msgid "Version: "
+msgstr ""
+
+#: inc/about/about.php:43 inc/about/about.php:90
+msgid "View Demo"
+msgstr ""
+
+#: inc/about/about.php:47 inc/about/about.php:59
+msgid "View Documentation"
+msgstr ""
+
+#: inc/woocommerce.php:206
+msgid "View your shopping cart"
+msgstr ""
+
+#: inc/about/about.php:221
+msgid ""
+"We offer ongoing customer support to help you get things done in due time. "
+"This way, you save energy and time, and focus on what brings you happiness. "
+"We know our products inside-out and we can lend a hand to help you save "
+"resources of all kinds."
+msgstr ""
+
+#. Weekly archive title. %s is the week date format.
+#: assets/lib/breadcrumbs/breadcrumbs.php:256
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:788
+msgctxt "weekly archives date format"
+msgid "W"
+msgstr ""
+
+#. Main welcome title
+#: inc/about/about.php:23
+#, php-format
+msgid "Welcome to %s! - Version "
+msgstr ""
+
+#: inc/about/about.php:160
+msgid "Widgetized Sidebars To Keep Attention"
+msgstr ""
+
+#: assets/lib/breadcrumbs/breadcrumbs.php:758
+#: assets/lib/breadcrumbs/breadcrumbs.php:787
+#: assets/lib/breadcrumbs/breadcrumbs.php:814
+#: assets/lib/breadcrumbs/breadcrumbs.php:841
+#: assets/lib/breadcrumbs/breadcrumbs.php:1182
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/about/about.php:89
+msgid ""
+"You can check out the theme demos for reference to find out what you can "
+"achieve using the theme and how it can be customized."
+msgstr ""
+
+#: inc/about/about.php:239
+msgid ""
+"You can easily remove the “Theme: Minimal Blocks by thememattic copyright "
+"from the footer area and make the theme yours from start to finish."
+msgstr ""
+
+#: inc/customizer/defaults.php:34
+msgid "You Might Have Missed"
+msgstr ""
+
+#. Description of the theme
+msgid ""
+"Your Website deserves an update &amp; this stylish, elegant and powerful "
+"multifunctional WordPress theme is just what you need. Minimal Blocks unique "
+"post layout, as well as full-width Featured Posts slider will help you stand "
+"out in the crowd &amp; show just how seriously you take this awesome website "
+"of yours! Use the One-Click Demo Import to get your site looking like the "
+"Minimal Blocks demo site in seconds. You'll catch yourself saying, \"That "
+"was easy.\""
+msgstr ""
+
+#: inc/customizer/options.php:519
+msgid "Zoom Out"
+msgstr ""
