@@ -1,0 +1,251 @@
+/* 
+ * ACFE: Dynamic Post Type 'Setting' Button
+ */
+.wrap .acfe-dpt-admin-config,
+.wrap .acfe-dpt-admin-config:active,
+.wrap .acfe-dt-admin-config,
+.wrap .acfe-dt-admin-config:active{
+    padding-left:4px;
+    padding-right:4px;
+}
+
+.wrap .acfe-dpt-admin-config span,
+.wrap .acfe-dt-admin-config span{
+    font-size: 16px;
+    vertical-align: text-top;
+    color:#444;
+}
+
+.wrap .acfe-dpt-admin-config:hover span,
+.wrap .acfe-dt-admin-config:hover span{
+    color:#fff;
+}
+
+/* 
+ * ACFE: Dynamic Post Type
+ */
+body.post-type-acfe-dpt #minor-publishing{
+    display:none;
+}
+
+/* 
+ * ACFE: Dynamic Taxonomy
+ */
+body.post-type-acfe-dt #minor-publishing{
+    display:none;
+}
+
+/* 
+ * ACFE: Dynamic Options Page
+ */
+body.post-type-acfe-dop #minor-publishing{
+    display:none;
+}
+
+/* 
+ * ACFE: Dynamic Block Type
+ */
+body.post-type-acfe-dbt #minor-publishing{
+    display:none;
+}
+
+/* 
+ * ACFE: Better Taxonomy - Archive
+ */
+.edit-tags-php #col-container #col-right{
+    float:none;
+    width:auto;
+}
+
+.edit-tags-php #col-container #col-right .col-wrap{
+    padding:0;
+}
+
+.edit-tags-php #col-left.acfe-bt{
+    float:none;
+    width:100%;
+}
+
+.edit-tags-php #col-left.acfe-bt .col-wrap{
+    padding:0;
+}
+
+.edit-tags-php #col-left.acfe-bt #poststuff{
+    min-width:100%;
+}
+
+.edit-tags-php #acfe-bt-form .submit.acf-field{
+    display:block !important;
+}
+
+/* 
+ * ACFE: Better Taxonomy - Edit
+ */
+.term-php #edittag{
+    max-width:100%;
+    width: 100%;
+    float:left;
+}
+
+.term-php #edittag .form-table{
+    background:#fff;
+    width:100%;
+    border: 1px solid #E1E1E1;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.term-php #edittag .form-table td{
+    background: #fff;
+    border-top: 1px solid #E1E1E1;
+    position:initial;
+}
+
+.term-php #edittag .form-table tr:first-of-type td,
+.term-php #edittag .form-table tr:first-of-type th{
+    border-top: 1px solid #E1E1E1;
+}
+
+.term-php #edittag .form-table td p{
+    font-size:13px;
+}
+
+.term-php #edittag .form-table th,
+.term-php #edittag .form-table td.acf-label{
+    border-top: 1px solid #E1E1E1;
+    border-right: 1px solid #E1E1E1;
+    background: #F9F9F9;
+    padding:15px 12px;
+    width:20%;
+    font-size:13px;
+    position:initial;
+}
+
+.term-php #edittag .form-table tr.acf-field{
+    position: initial;
+}
+
+.term-php #edittag .form-table tr.acf-tab-wrap > td{
+    background: #F9F9F9;
+    padding:15px 0 0 0;
+}
+
+.term-php #edittag .form-table tr.acf-tab-wrap > td ul.acf-tab-group{
+    border-bottom:0;
+    padding:0 0 0 20%;
+}
+
+.term-php #edittag .form-table tr.acf-tab-wrap > td ul.acf-tab-group > li.active a{
+    background: #fff;
+}
+
+.term-php #poststuff.acfe-acfe-bt-admin-column{
+    min-width:auto;
+    padding:0;
+}
+
+.term-php #poststuff.acfe-acfe-bt-admin-column .inside{
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+ * ACFE: Author Label
+ */
+.acf-field.acf-field-acfe-author > .acf-label{
+    display:none;
+}
+
+/* 
+ * ACFE: Post Type Archive Box
+ */
+#poststuff.acfe-post-type-archive-box{
+    min-width:auto;
+    padding:0;
+}
+
+#poststuff.acfe-post-type-archive-box .inside{
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+ * ACF: Label bold fix
+ */
+.acf-field .acf-label label{
+    font-weight:600 !important;
+}
+
+/* 
+ * ACF: Repeater Block Fix (Add spacing)
+ */
+.acf-repeater.-row > table,
+.acf-repeater.-block > table{
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    background: none;
+    border: 0;
+    margin-top: -15px;
+    margin-bottom: -7px;
+}
+
+.acf-repeater.-row > table > tbody > tr > td,
+.acf-repeater.-block > table > tbody > tr > td{
+    border-top: 1px solid #E1E1E1;
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.acf-repeater.-row > table > tbody > tr > td:first-of-type,
+.acf-repeater.-block > table > tbody > tr > td:first-of-type{
+    border-left: 1px solid #E1E1E1;
+}
+
+.acf-repeater.-row > table > tbody > tr > td:last-of-type,
+.acf-repeater.-block > table > tbody > tr > td:last-of-type{
+    border-right: 1px solid #E1E1E1;
+}
+
+/* 
+ * ACF: Select2 Fix
+ */
+.select2-container .select2-selection{
+    border-color: #dfdfdf !important;
+    border-radius:0 !important;
+}
+
+.select2-container .select2-selection__choice{
+    border-color: #dfdfdf !important;
+    border-radius:0 !important;
+}
+
+.select2-dropdown{
+    border-color: #dfdfdf !important;
+    border-radius:0 !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__arrow,
+.select2-container .select2-selection--single{
+	height: 32px !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__rendered{
+	line-height: 31px !important;
+}
+
+.select2-container .select2-selection--single .select2-selection__clear{
+	line-height: 30px;
+}
+
+/* 
+ * Gutenberg: Fix metaboxes
+ */
+.edit-post-layout__metaboxes:not(:empty) .edit-post-meta-boxes-area {
+	margin: auto 10px;
+}
+
+.edit-post-layout__metaboxes:not(:empty) {
+    background:#f3f4f5;
+}
+
+.edit-post-layout__metaboxes .edit-post-meta-boxes-area .postbox {
+	margin-bottom: 10px;
+}
