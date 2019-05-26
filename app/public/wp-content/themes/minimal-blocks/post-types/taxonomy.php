@@ -6,21 +6,36 @@ $taxonomies = array(
         "singular_name"       => "Platform",
         "slug"                => "platform",
         "with_front"          => true,
-        "supported_post_type" => array("projects", "test_suite", "test_case", "results", "scenarios")
+        "supported_post_type" => array(
+            "projects", "test_suite", "test_case", "results", "scenarios"
+        )
     ),
     array(
         "name"                => "Territories",
         "singular_name"       => "Territory",
         "slug"                => "territory",
         "with_front"          => true,
-        "supported_post_type" => array("projects", "test_suite", "test_case", "results", "scenarios")
+        "supported_post_type" => array(
+            "projects", "test_suite", "test_case", "results", "scenarios"
+        )
     ),
     array(
         "name"                => "Supported Devices",
         "singular_name"       => "Supported Device",
         "slug"                => "supported_device",
         "with_front"          => true,
-        "supported_post_type" => array("projects", "test_suite", "test_case", "results", "scenarios")
+        "supported_post_type" => array(
+            "projects", "test_suite", "test_case", "results", "scenarios"
+        )
+    ),
+    array(
+        "name"                => "Projects",
+        "singular_name"       => "Project",
+        "slug"                => "projects",
+        "with_front"          => true,
+        "supported_post_type" => array(
+            "projects", "test_suite", "test_case", "results", "scenarios"
+        )
     ),
 );
 
@@ -55,6 +70,9 @@ function register_custom_taxonomies()
             "rest_controller_class" => "WP_REST_Terms_Controller",
             "show_in_quick_edit"    => false,
         );
+
+        array_push($taxonomy["supported_post_type"], "options");
+
         register_taxonomy($taxonomy["slug"], $taxonomy["supported_post_type"], $args);
     }
 }

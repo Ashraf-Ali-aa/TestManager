@@ -24,6 +24,34 @@ acf_add_local_field_group(array(
 			'acfe_permissions' => '',
 		),
 		array(
+			'key' => 'field_5cebc49cd3a90',
+			'label' => 'Project Category',
+			'name' => 'project_category',
+			'type' => 'taxonomy',
+			'instructions' => '',
+			'required' => 1,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'acfe_validate' => '',
+			'acfe_update' => '',
+			'acfe_permissions' => '',
+			'taxonomy' => 'projects',
+			'field_type' => 'multi_select',
+			'allow_null' => 0,
+			'add_term' => 1,
+			'save_terms' => 1,
+			'load_terms' => 1,
+			'return_format' => 'object',
+			'acfe_bidirectional' => array(
+				'acfe_bidirectional_enabled' => '0',
+			),
+			'multiple' => 0,
+		),
+		array(
 			'key' => 'field_5cde9a0284a50',
 			'label' => 'Platform',
 			'name' => 'platform',
@@ -165,7 +193,7 @@ acf_add_local_field_group(array(
 	'acfe_permissions' => '',
 	'acfe_note' => '',
 	'acfe_meta' => '',
-	'modified' => 1558893653,
+	'modified' => 1558955324,
 ));
 
 endif;
