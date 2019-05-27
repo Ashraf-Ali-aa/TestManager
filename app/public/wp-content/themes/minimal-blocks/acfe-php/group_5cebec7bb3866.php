@@ -267,11 +267,12 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_autosync' => array(
 		0 => 'php',
+		1 => 'json',
 	),
 	'acfe_permissions' => '',
 	'acfe_note' => '',
 	'acfe_meta' => '',
-	'modified' => 1558969366,
+	'modified' => 1558986795,
 ));
 
 endif;

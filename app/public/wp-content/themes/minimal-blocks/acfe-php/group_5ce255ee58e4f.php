@@ -198,7 +198,7 @@ acf_add_local_field_group(array(
 			'return_format' => 'object',
 			'acfe_bidirectional' => array(
 				'acfe_bidirectional_enabled' => true,
-				'acfe_bidirectional_related' => 'field_5cebe812748af',
+				'acfe_bidirectional_related' => false,
 			),
 		),
 	),
@@ -222,11 +222,12 @@ acf_add_local_field_group(array(
 	'acfe_display_title' => '',
 	'acfe_autosync' => array(
 		0 => 'php',
+		1 => 'json',
 	),
 	'acfe_permissions' => '',
 	'acfe_note' => '',
 	'acfe_meta' => '',
-	'modified' => 1558965013,
+	'modified' => 1558986726,
 ));
 
 endif;
