@@ -37,6 +37,24 @@ $taxonomies = array(
             "projects", "test_suite", "test_case", "results", "scenarios"
         )
     ),
+    array(
+        "name"                => "Status",
+        "singular_name"       => "Status",
+        "slug"                => "status",
+        "with_front"          => true,
+        "supported_post_type" => array(
+            "projects", "test_suite", "test_case", "results", "scenarios"
+        )
+    ),
+    array(
+        "name"                => "Testing Type",
+        "singular_name"       => "Testing Type",
+        "slug"                => "testing_type",
+        "with_front"          => true,
+        "supported_post_type" => array(
+            "test_case", "results"
+        )
+    ),
 );
 
 function register_custom_taxonomies()
