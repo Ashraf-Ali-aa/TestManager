@@ -38,9 +38,9 @@ $taxonomies = array(
         )
     ),
     array(
-        "name"                => "Status",
-        "singular_name"       => "Status",
-        "slug"                => "status",
+        "name"                => "Current Status",
+        "singular_name"       => "Current Status",
+        "slug"                => "current_status",
         "with_front"          => true,
         "supported_post_type" => array(
             "projects", "test_suite", "test_case", "results", "scenarios"
@@ -53,6 +53,15 @@ $taxonomies = array(
         "with_front"          => true,
         "supported_post_type" => array(
             "test_case", "results"
+        )
+    ),
+    array(
+        "name"                => "Features",
+        "singular_name"       => "Feature",
+        "slug"                => "features",
+        "with_front"          => true,
+        "supported_post_type" => array(
+            "projects", "test_suite", "test_case", "results", "scenarios"
         )
     ),
 );
@@ -95,4 +104,4 @@ function register_custom_taxonomies()
     }
 }
 
-add_action('init', 'register_custom_taxonomies');
+add_action('init', 'register_custom_taxonomies', 0);

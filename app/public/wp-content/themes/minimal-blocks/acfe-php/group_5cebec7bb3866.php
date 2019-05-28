@@ -22,12 +22,12 @@ acf_add_local_field_group(array(
 			'acfe_validate' => '',
 			'acfe_update' => '',
 			'acfe_permissions' => '',
-			'taxonomy' => 'status',
+			'taxonomy' => 'current_status',
 			'field_type' => 'select',
 			'allow_null' => 0,
 			'add_term' => 0,
 			'save_terms' => 1,
-			'load_terms' => 0,
+			'load_terms' => 1,
 			'return_format' => 'object',
 			'acfe_bidirectional' => array(
 				'acfe_bidirectional_enabled' => '0',
@@ -262,7 +262,7 @@ acf_add_local_field_group(array(
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
-	'active' => 0,
+	'active' => 1,
 	'description' => '',
 	'acfe_display_title' => '',
 	'acfe_autosync' => array(
@@ -272,7 +272,7 @@ acf_add_local_field_group(array(
 	'acfe_permissions' => '',
 	'acfe_note' => '',
 	'acfe_meta' => '',
-	'modified' => 1559034654,
+	'modified' => 1559043613,
 ));
 
 endif;

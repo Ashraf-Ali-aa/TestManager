@@ -346,3 +346,5 @@ include get_template_directory() . '/post-types/post-types.php';
 include get_template_directory() . '/post-types/taxonomy.php';
 include get_template_directory() . '/post-types/taxonomy-terms.php';
 include get_template_directory() . '/acf/acf-plugins.php';
+
+include get_template_directory() . '/acf/update-child-posts.php';

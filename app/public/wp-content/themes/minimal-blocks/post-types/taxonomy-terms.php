@@ -17,10 +17,10 @@ $taxonomy_terms = array(
     array("term" => "TV",     "taxonomy" => "supported_device", "description" => "", "slug" => ""),
 
     // Status
-    array("term" => "Blocked",          "taxonomy" => "status", "description" => "", "slug" => ""),
-    array("term" => "Work in progress", "taxonomy" => "status", "description" => "", "slug" => ""),
-    array("term" => "Pending",          "taxonomy" => "status", "description" => "", "slug" => ""),
-    array("term" => "Approved",         "taxonomy" => "status", "description" => "", "slug" => ""),
+    array("term" => "Blocked",          "taxonomy" => "current_status", "description" => "", "slug" => ""),
+    array("term" => "Work in progress", "taxonomy" => "current_status", "description" => "", "slug" => ""),
+    array("term" => "Pending",          "taxonomy" => "current_status", "description" => "", "slug" => ""),
+    array("term" => "Approved",         "taxonomy" => "current_status", "description" => "", "slug" => ""),
 
     // Testing Type
     array("term" => "Unit",        "taxonomy" => "testing_type", "description" => "", "slug" => ""),
@@ -31,6 +31,8 @@ $taxonomy_terms = array(
     array("term" => "Manual",      "taxonomy" => "testing_type", "description" => "", "slug" => ""),
     array("term" => "Regression",  "taxonomy" => "testing_type", "description" => "", "slug" => ""),
 
+    // Features
+    array("term" => "Video Player", "taxonomy" => "features", "description" => "", "slug" => ""),
 );
 
 // Register Custom Taxonomy
