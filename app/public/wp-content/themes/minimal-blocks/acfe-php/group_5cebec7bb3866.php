@@ -26,7 +26,7 @@ acf_add_local_field_group(array(
 			'field_type' => 'select',
 			'allow_null' => 0,
 			'add_term' => 0,
-			'save_terms' => 0,
+			'save_terms' => 1,
 			'load_terms' => 0,
 			'return_format' => 'object',
 			'acfe_bidirectional' => array(
@@ -154,7 +154,7 @@ acf_add_local_field_group(array(
 			'field_type' => 'multi_select',
 			'allow_null' => 0,
 			'add_term' => 0,
-			'save_terms' => 0,
+			'save_terms' => 1,
 			'load_terms' => 0,
 			'return_format' => 'object',
 			'acfe_bidirectional' => array(
@@ -183,7 +183,7 @@ acf_add_local_field_group(array(
 			'allow_null' => 0,
 			'add_term' => 0,
 			'save_terms' => 1,
-			'load_terms' => 1,
+			'load_terms' => 0,
 			'return_format' => 'object',
 			'acfe_bidirectional' => array(
 				'acfe_bidirectional_enabled' => '0',
@@ -211,7 +211,7 @@ acf_add_local_field_group(array(
 			'allow_null' => 0,
 			'add_term' => 0,
 			'save_terms' => 1,
-			'load_terms' => 1,
+			'load_terms' => 0,
 			'return_format' => 'object',
 			'acfe_bidirectional' => array(
 				'acfe_bidirectional_enabled' => '0',
@@ -239,7 +239,7 @@ acf_add_local_field_group(array(
 			'allow_null' => 0,
 			'add_term' => 0,
 			'save_terms' => 1,
-			'load_terms' => 1,
+			'load_terms' => 0,
 			'return_format' => 'object',
 			'acfe_bidirectional' => array(
 				'acfe_bidirectional_enabled' => '0',
@@ -258,11 +258,11 @@ acf_add_local_field_group(array(
 	),
 	'menu_order' => 0,
 	'position' => 'normal',
-	'style' => 'seamless',
+	'style' => 'default',
 	'label_placement' => 'top',
 	'instruction_placement' => 'label',
 	'hide_on_screen' => '',
-	'active' => 1,
+	'active' => 0,
 	'description' => '',
 	'acfe_display_title' => '',
 	'acfe_autosync' => array(
@@ -272,7 +272,7 @@ acf_add_local_field_group(array(
 	'acfe_permissions' => '',
 	'acfe_note' => '',
 	'acfe_meta' => '',
-	'modified' => 1558986795,
+	'modified' => 1559034654,
 ));
 
 endif;
