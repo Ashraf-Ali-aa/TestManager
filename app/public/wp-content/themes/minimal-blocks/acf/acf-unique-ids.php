@@ -42,6 +42,6 @@ class ACF_Field_Unique_ID extends \acf_field
 		if (!empty($value)) {
 			return $value;
 		}
-		return abs(crc32(uniqid()));
+		return $post_id;
 	}
 }

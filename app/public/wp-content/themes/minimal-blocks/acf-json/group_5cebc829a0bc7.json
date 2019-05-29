@@ -3,6 +3,51 @@
     "title": "Requirements - Metabox",
     "fields": [
         {
+            "key": "field_5cee3a30cc6eb",
+            "label": "ID",
+            "name": "id",
+            "type": "unique_id",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "10",
+                "class": "",
+                "id": ""
+            },
+            "acfe_validate": "",
+            "acfe_update": "",
+            "acfe_permissions": ""
+        },
+        {
+            "key": "field_5cebc87711b8c",
+            "label": "Project Category",
+            "name": "project_category",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "acfe_validate": "",
+            "acfe_update": "",
+            "acfe_permissions": "",
+            "taxonomy": "projects",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 1,
+            "return_format": "object",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "multiple": 0
+        },
+        {
             "key": "field_5cebcef3bc651",
             "label": "Status",
             "name": "status",
@@ -31,12 +76,12 @@
             "multiple": 0
         },
         {
-            "key": "field_5cebc87711b8c",
-            "label": "Project Category",
-            "name": "project_category",
+            "key": "field_5cee3a4b57b15",
+            "label": "Features",
+            "name": "features",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -46,7 +91,7 @@
             "acfe_validate": "",
             "acfe_update": "",
             "acfe_permissions": "",
-            "taxonomy": "projects",
+            "taxonomy": "features",
             "field_type": "multi_select",
             "allow_null": 0,
             "add_term": 0,
@@ -180,5 +225,5 @@
     "acfe_permissions": "",
     "acfe_note": "",
     "acfe_meta": "",
-    "modified": 1559043577
+    "modified": 1559126910
 }

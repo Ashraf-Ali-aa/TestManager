@@ -11,7 +11,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "10",
                 "class": "",
                 "id": ""
             },
@@ -28,7 +28,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "40",
                 "class": "",
                 "id": ""
             },
@@ -48,6 +48,34 @@
             "multiple": 0
         },
         {
+            "key": "field_5cde9b6f84a51",
+            "label": "Territory",
+            "name": "territory",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "acfe_validate": "",
+            "acfe_update": "",
+            "acfe_permissions": "",
+            "taxonomy": "territory",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "add_term": 0,
+            "save_terms": 1,
+            "load_terms": 0,
+            "return_format": "object",
+            "acfe_bidirectional": {
+                "acfe_bidirectional_enabled": "0"
+            },
+            "multiple": 0
+        },
+        {
             "key": "field_5cde9a0284a50",
             "label": "Platform",
             "name": "platform",
@@ -56,7 +84,7 @@
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -84,7 +112,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -92,34 +120,6 @@
             "acfe_update": "",
             "acfe_permissions": "",
             "taxonomy": "supported_device",
-            "field_type": "multi_select",
-            "allow_null": 0,
-            "add_term": 0,
-            "save_terms": 1,
-            "load_terms": 0,
-            "return_format": "object",
-            "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": "0"
-            },
-            "multiple": 0
-        },
-        {
-            "key": "field_5cde9b6f84a51",
-            "label": "Territory",
-            "name": "territory",
-            "type": "taxonomy",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "acfe_validate": "",
-            "acfe_update": "",
-            "acfe_permissions": "",
-            "taxonomy": "territory",
             "field_type": "multi_select",
             "allow_null": 0,
             "add_term": 0,
@@ -194,7 +194,7 @@
             "return_format": "object",
             "acfe_bidirectional": {
                 "acfe_bidirectional_enabled": true,
-                "acfe_bidirectional_related": false
+                "acfe_bidirectional_related": "field_5cebe812748af"
             }
         }
     ],
@@ -223,5 +223,5 @@
     "acfe_permissions": "",
     "acfe_note": "",
     "acfe_meta": "",
-    "modified": 1558986726
+    "modified": 1559116276
 }

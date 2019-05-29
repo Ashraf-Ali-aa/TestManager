@@ -7,7 +7,7 @@ $taxonomies = array(
         "slug"                => "platform",
         "with_front"          => true,
         "supported_post_type" => array(
-            "projects", "test_suite", "test_case", "results", "scenarios"
+            "projects", "requirements", "scenarios", "test_suite", "test_case", "test_results"
         )
     ),
     array(
@@ -16,7 +16,7 @@ $taxonomies = array(
         "slug"                => "territory",
         "with_front"          => true,
         "supported_post_type" => array(
-            "projects", "test_suite", "test_case", "results", "scenarios"
+            "projects", "requirements", "scenarios", "test_suite", "test_case", "test_results"
         )
     ),
     array(
@@ -25,7 +25,7 @@ $taxonomies = array(
         "slug"                => "supported_device",
         "with_front"          => true,
         "supported_post_type" => array(
-            "projects", "test_suite", "test_case", "results", "scenarios"
+            "projects", "requirements", "scenarios", "test_suite", "test_case", "test_results"
         )
     ),
     array(
@@ -34,7 +34,7 @@ $taxonomies = array(
         "slug"                => "projects",
         "with_front"          => true,
         "supported_post_type" => array(
-            "projects", "test_suite", "test_case", "results", "scenarios"
+            "projects", "requirements", "scenarios", "test_suite", "test_case", "test_results",
         )
     ),
     array(
@@ -43,7 +43,7 @@ $taxonomies = array(
         "slug"                => "current_status",
         "with_front"          => true,
         "supported_post_type" => array(
-            "projects", "test_suite", "test_case", "results", "scenarios"
+            "projects", "requirements", "scenarios", "test_suite", "test_case", "test_results"
         )
     ),
     array(
@@ -61,7 +61,7 @@ $taxonomies = array(
         "slug"                => "features",
         "with_front"          => true,
         "supported_post_type" => array(
-            "projects", "test_suite", "test_case", "results", "scenarios"
+            "projects", "requirements", "scenarios", "test_suite", "test_case", "test_results"
         )
     ),
 );
