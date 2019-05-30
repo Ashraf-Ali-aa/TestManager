@@ -7,6 +7,9 @@
  * @package Minimal_Blocks
  */
 
+require get_template_directory() . '/library/wp-async-request.php';
+require get_template_directory() . '/library/wp-background-process.php';
+
 if (!function_exists('minimal_blocks_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
