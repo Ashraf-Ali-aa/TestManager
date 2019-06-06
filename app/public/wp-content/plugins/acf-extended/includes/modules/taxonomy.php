@@ -15,8 +15,7 @@ function acfe_better_taxonomy_admin_footer(){
     </script>
     
     <script type="text/html" id="tmpl-acfe-bt-wrapper">
-        <div id="poststuff" class="postbox-container">
-        </div>
+        <div id="poststuff"></div>
     </script>
     
     <script type="text/javascript">
@@ -25,7 +24,7 @@ function acfe_better_taxonomy_admin_footer(){
         $('.wrap .wp-heading-inline').after($('#tmpl-acfe-bt-admin-button-add').html());
         
         // Move form
-        $('.search-form').before($('#col-container #col-left').addClass('acfe-bt'));
+        $('#ajax-response').after($('#col-container #col-left').addClass('acfe-bt'));
         
         // Hide form
         $('.acfe-bt').hide();
@@ -34,7 +33,7 @@ function acfe_better_taxonomy_admin_footer(){
         $('.acfe-bt .form-wrap').append($('#tmpl-acfe-bt-wrapper').html());
         
         // Append form inside wrapper
-        $('.acfe-bt .postbox-container').append($('.acfe-bt .form-wrap form'));
+        $('.acfe-bt #poststuff').append($('.acfe-bt .form-wrap form'));
         
         $('.acfe-bt .form-wrap form').wrapInner('<div class="postbox" id="acfe-bt-form"><div class="inside"></div></div>');
         
@@ -142,7 +141,7 @@ function acfe_better_taxonomy_edit_admin_footer(){
         $('#edittag .acf-columns-2').append($('#tmpl-acf-column-2').html());
         
         // Add acf-input
-        $('#edittag .form-table td:not(".acf-input")').wrapInner('<div class="acf-input"></div>');
+        //$('#edittag .form-table td:not(".acf-input")').wrapInner('<div class="acf-input"></div>');
         
         $('#edittag .edit-tag-actions').hide();
         

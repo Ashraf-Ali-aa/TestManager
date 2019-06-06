@@ -29,26 +29,33 @@ function acfe_update_functions($choices){
 /**
  * Exclude layout advanced fields
  */
-add_filter('acfe/update/exclude', 'acfe_update_exclude', 10, 2);
-function acfe_update_exclude($exclude, $field){
+add_filter('acfe/update/exclude', 'acfe_update_exclude', 0, 2);
+function acfe_update_exclude($exclude, $type){
     
     $excludes = array('message', 'accordion', 'tab', 'group', 'repeater', 'flexible_content', 'clone', 'acfe_dynamic_message');
-    if(in_array($field['type'], $excludes))
+    if(in_array($type, $excludes))
         $exclude = true;
     
     return $exclude;
     
 }
 
+foreach(acf_get_field_types_info() as $field){
+    
+    $type = $field['name'];
+    
+    $exclude = apply_filters('acfe/update/exclude', false, $type);
+    if($exclude)
+        continue;
+    
+    add_action('acf/render_field_settings/type=' . $type, 'acfe_update_settings', 991);
+    
+}
+
 /**
  * Add Setting
  */
-add_action('acf/render_field_settings', 'acfe_update_settings', 991);
 function acfe_update_settings($field){
-    
-    $exclude = apply_filters('acfe/update/exclude', false, $field);
-    if($exclude)
-        return;
     
     $choices = apply_filters('acfe/update/functions', array(), $field);
     if(empty($choices))
@@ -82,7 +89,7 @@ function acfe_update_settings($field){
                 ),
             ),
         )
-    ), true);
+    ), false);
     
 }
 

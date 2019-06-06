@@ -12,37 +12,71 @@ function get_flexible($selector, $post_id = false){
     
     if(!have_rows($selector, $post_id))
         return;
-
+    
+    // init
     $field = acf_get_field($selector);
-    $acf_field_flexible_content = new acf_field_flexible_content();
+    $flexible = acf_get_field_type('flexible_content');
+    
+    // Query Var
+    set_query_var('acf_flexible_field', $field);
+    
+    // Enqueue
+    $acfe_flexible_enqueue_styles = array();
+    $acfe_flexible_enqueue_scripts = array();
     
     ob_start();
     
         while(have_rows($selector)): the_row();
             
-            $layout_title = get_row_layout();
-            $layout = $acf_field_flexible_content->get_layout($layout_title, $field);
+            $layout = $flexible->get_layout(get_row_layout(), $field);
+            
+            set_query_var('acf_flexible_layout', $layout);
+            
+            // Add HTML Comment
+            echo "\n" . '<!-- ' . $layout['label'] . ' -->' . "\n";
             
             // Render: Style
             if(isset($layout['acfe_flexible_render_style']) && !empty($layout['acfe_flexible_render_style'])){
                 
-                if(file_exists(ACFE_THEME_PATH . '/' . $layout['acfe_flexible_render_style']))
-                    echo '<link rel="stylesheet" href="' . ACFE_THEME_URL . '/' . $layout['acfe_flexible_render_style'] . '" type="text/css">';
+                // Style exists
+                if(file_exists(ACFE_THEME_PATH . '/' . $layout['acfe_flexible_render_style'])){
+                    
+                    // Already enqueued
+                    if(!in_array($layout['acfe_flexible_render_style'], $acfe_flexible_enqueue_styles)){
+                        
+                        $acfe_flexible_enqueue_styles[] = $layout['acfe_flexible_render_style'];
+                        
+                        echo '<link rel="stylesheet" href="' . ACFE_THEME_URL . '/' . $layout['acfe_flexible_render_style'] . '" type="text/css">' . "\n";
+                        
+                    }
+                    
+                }
                 
             }
             
             // Render: Script
             if(isset($layout['acfe_flexible_render_script']) && !empty($layout['acfe_flexible_render_script'])){
                 
-                if(file_exists(ACFE_THEME_PATH . '/' . $layout['acfe_flexible_render_script']))
-                    echo '<script src="' . ACFE_THEME_URL . '/' . $layout['acfe_flexible_render_script'] . '"></script>';
+                // Script exists
+                if(file_exists(ACFE_THEME_PATH . '/' . $layout['acfe_flexible_render_script'])){
+                    
+                    // Already enqueued
+                    if(!in_array($layout['acfe_flexible_render_script'], $acfe_flexible_enqueue_scripts)){
+                        
+                        $acfe_flexible_enqueue_scripts[] = $layout['acfe_flexible_render_script'];
+                        
+                        echo '<script src="' . ACFE_THEME_URL . '/' . $layout['acfe_flexible_render_script'] . '"></script>' . "\n";
+                        
+                    }
+                    
+                }
                 
             }
             
             // Render: Template
             if(isset($layout['acfe_flexible_render_template']) && !empty($layout['acfe_flexible_render_template'])){
                 
-                locate_template(array($layout['acfe_flexible_render_template']), true);
+                locate_template(array($layout['acfe_flexible_render_template']), true, false);
                 
             }
 
@@ -62,6 +96,19 @@ if(!function_exists('the_flexible')){
 function the_flexible($selector, $post_id = false){
     
     echo get_flexible($selector, $post_id);
+    
+}
+
+}
+
+/**
+ * Has Flexible
+ */
+if(!function_exists('has_flexible')){
+    
+function has_flexible($selector, $post_id = false){
+    
+    return have_rows($selector, $post_id);
     
 }
 

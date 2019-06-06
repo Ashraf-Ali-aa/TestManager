@@ -375,7 +375,7 @@ function acfe_render_field_group_data($field){
     }
     
     echo '<a href="#" class="button acfe_modal_open" data-modal-key="' . $field_group['key'] . '">' . __('Data') . '</a>';
-    echo '<div class="acfe_modal acfe_modal_data hidden" data-modal-key="' . $field_group['key'] . '"><pre>' . print_r($field_group, true) . '</pre></div>';
+    echo '<div class="acfe-modal" data-modal-key="' . $field_group['key'] . '"><div style="padding:15px;"><pre>' . print_r($field_group, true) . '</pre></div>';
     
 }
 

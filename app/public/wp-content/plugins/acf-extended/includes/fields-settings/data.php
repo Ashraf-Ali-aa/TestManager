@@ -53,6 +53,6 @@ function acfe_render_field_data($field){
     if(!$get_field && !$get_post)
         $button = '<a href="#" class="button disabled" disabled>' . __('Data') . '</a>';
     
-    echo $button . '<div class="acfe_modal acfe_modal_dev_debug hidden" data-modal-key="' . $acfe_field_data_id . '">' . $get_field_debug . $get_post_debug . '</div>';
+    echo $button . '<div class="acfe-modal" data-modal-key="' . $acfe_field_data_id . '"><div style="padding:15px;">' . $get_field_debug . $get_post_debug . '</div></div>';
     
 }

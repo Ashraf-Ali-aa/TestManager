@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Advanced Custom Fields: Extended
  * Description: Enhancement Suite which improves Advanced Custom Fields administration
- * Version:     0.7.0.3
+ * Version:     0.7.5.5
  * Author: 		ACF Extended
  * Author URI:  https://www.acf-extended.com
  * Text Domain: acfe
@@ -55,6 +55,7 @@ function acfe_load(){
      * Admin Pages
      */
     require_once(ACFE_PATH . 'includes/admin/options.php');
+    require_once(ACFE_PATH . 'includes/admin/plugins.php');
     require_once(ACFE_PATH . 'includes/admin/settings.php');
     
     
@@ -112,4 +113,24 @@ function acfe_fields(){
     require_once(ACFE_PATH . 'includes/fields/field-slug.php');
     require_once(ACFE_PATH . 'includes/fields/field-taxonomies.php');
 
+}
+
+/**
+ * ACFE: Tools
+ */
+add_action('acf/include_admin_tools', 'acfe_tools');
+function acfe_tools(){
+    
+    if(!acfe_is_acf_pro())
+        return;
+    
+    require_once(ACFE_PATH . 'includes/admin/tools/dbt-export.php');
+    require_once(ACFE_PATH . 'includes/admin/tools/dbt-import.php');
+    require_once(ACFE_PATH . 'includes/admin/tools/dpt-export.php');
+    require_once(ACFE_PATH . 'includes/admin/tools/dpt-import.php');
+    require_once(ACFE_PATH . 'includes/admin/tools/dt-export.php');
+    require_once(ACFE_PATH . 'includes/admin/tools/dt-import.php');
+    require_once(ACFE_PATH . 'includes/admin/tools/dop-export.php');
+    require_once(ACFE_PATH . 'includes/admin/tools/dop-import.php');
+    
 }

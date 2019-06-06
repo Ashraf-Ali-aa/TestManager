@@ -169,6 +169,38 @@ acf_add_local_field_group(array(
 			),
 		),
 		array(
+			'key' => 'field_5cf0da8037ec0',
+			'label' => 'Scenarios',
+			'name' => 'scenarios',
+			'type' => 'relationship',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'acfe_validate' => '',
+			'acfe_update' => '',
+			'acfe_permissions' => '',
+			'post_type' => array(
+				0 => 'scenarios',
+			),
+			'taxonomy' => '',
+			'filters' => array(
+				0 => 'search',
+				1 => 'taxonomy',
+			),
+			'elements' => '',
+			'min' => '',
+			'max' => '',
+			'return_format' => 'object',
+			'acfe_bidirectional' => array(
+				'acfe_bidirectional_enabled' => '0',
+			),
+		),
+		array(
 			'key' => 'field_5cebe8f2c55c4',
 			'label' => 'Test Suites',
 			'name' => 'test_suites',
@@ -227,7 +259,7 @@ acf_add_local_field_group(array(
 	'acfe_permissions' => '',
 	'acfe_note' => '',
 	'acfe_meta' => '',
-	'modified' => 1559116276,
+	'modified' => 1559288520,
 ));
 
 endif;

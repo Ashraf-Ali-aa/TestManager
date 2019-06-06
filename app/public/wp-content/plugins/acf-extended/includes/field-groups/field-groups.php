@@ -76,6 +76,15 @@ function acfe_field_groups_column($columns){
         
     }
     
+    // Remove 'Field Group Category' column if there is no terms
+    $categories = get_terms(array(
+        'taxonomy'      => 'acf-field-group-category',
+        'hide_empty'    => false,
+    ));
+    
+    if(empty($categories))
+        unset($columns['acf-field-group-category']);
+    
     return $columns;
 }
 

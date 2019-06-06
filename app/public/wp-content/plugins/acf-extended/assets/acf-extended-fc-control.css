@@ -1,0 +1,14 @@
+/*
+ * ACFE: Flexible Icons
+ */
+.acf-flexible-content .layout .acf-icon.acfe-flexible-icon.dashicons{
+    visibility: hidden;
+}
+
+.acf-flexible-content .layout .acf-icon.acfe-flexible-icon.dashicons:before{
+    font-family: dashicons;
+}
+
+.acf-flexible-content .layout:hover .acf-icon.acfe-flexible-icon.dashicons{
+	visibility: visible;
+}

@@ -81,21 +81,32 @@ function acfe_validate_functions($choices){
 /**
  * Exclude layout advanced fields
  */
-add_filter('acfe/validate/exclude', 'acfe_validate_exclude', 10, 2);
-function acfe_validate_exclude($exclude, $field){
+add_filter('acfe/validate/exclude', 'acfe_validate_exclude', 0, 2);
+function acfe_validate_exclude($exclude, $type){
     
     $excludes = array('message', 'accordion', 'tab', 'group', 'repeater', 'flexible_content', 'clone', 'acfe_dynamic_message');
-    if(in_array($field['type'], $excludes))
+    if(in_array($type, $excludes))
         $exclude = true;
     
     return $exclude;
     
 }
 
+foreach(acf_get_field_types_info() as $field){
+    
+    $type = $field['name'];
+    
+    $exclude = apply_filters('acfe/validate/exclude', false, $type);
+    if($exclude)
+        continue;
+    
+    add_action('acf/render_field_settings/type=' . $type, 'acfe_validation_settings', 990);
+    
+}
+
 /**
  * Add Setting
  */
-add_action('acf/render_field_settings', 'acfe_validation_settings', 990);
 function acfe_validation_settings($field){
     
     $exclude = apply_filters('acfe/validate/exclude', false, $field);
@@ -204,7 +215,7 @@ function acfe_validation_settings($field){
                 ),
             ),
         )
-    ), true);
+    ), false);
     
 }
 

@@ -147,7 +147,11 @@ function acfe_dop_filter_save($post_id){
         return;
     
     $title = get_field('page_title', $post_id);
-    $name = sanitize_title($title);
+    $name = get_field('acfe_dop_name', $post_id);
+    
+    // Force name
+    if(empty($name))
+        $name = sanitize_title($title);
     
     // Update post
     wp_update_post(array(
@@ -233,7 +237,7 @@ function acfe_dop_filter_status_trash($post){
     
     $post_id = $post->ID;
     $title = get_field('page_title', $post_id);
-    $name = sanitize_title($title);
+    $name = get_field('acfe_dop_name', $post_id);
     
     // Get ACFE option
     $option = get_option('acfe_dynamic_options_pages', array());
@@ -308,7 +312,7 @@ function acfe_dop_admin_columns($columns){
     if(isset($columns['date']))
         unset($columns['date']);
     
-    $columns['slug'] = __('Slug');
+    $columns['name'] = __('Name');
     $columns['post_id'] = __('Post ID');
     $columns['autoload'] = __('Autoload');
     
@@ -322,22 +326,12 @@ function acfe_dop_admin_columns($columns){
 add_action('manage_acfe-dop_posts_custom_column', 'acfe_dop_admin_columns_html', 10, 2);
 function acfe_dop_admin_columns_html($column, $post_id){
     
-    // Slug
-    if($column == 'slug'){
+    // Name
+    if($column == 'name'){
         
-        $page_title = get_field('page_title', $post_id);
-        $menu_title = get_field('menu_title', $post_id);
-        $menu_title = get_field('menu_title', $post_id);
+        $name = get_field('acfe_dop_name', $post_id);
         
-        if(empty($menu_slug)){
-            
-            $menu_slug = sanitize_title($menu_title);
-            if(empty($menu_title))
-                $menu_slug = sanitize_title($page_title);
-            
-        }
-        
-        echo '<code style="-webkit-user-select: all;-moz-user-select: all;-ms-user-select: all;user-select: all;font-size: 12px;">' . $menu_slug . '</code>';
+        echo '<code style="-webkit-user-select: all;-moz-user-select: all;-ms-user-select: all;user-select: all;font-size: 12px;">' . $name . '</code>';
         
     }
     
@@ -348,7 +342,7 @@ function acfe_dop_admin_columns_html($column, $post_id){
         if(empty($p_id))
             $p_id = 'options';
         
-        echo $p_id;
+        echo '<code style="-webkit-user-select: all;-moz-user-select: all;-ms-user-select: all;user-select: all;font-size: 12px;">' . $p_id. '</code>';
         
     }
     
@@ -361,6 +355,73 @@ function acfe_dop_admin_columns_html($column, $post_id){
             echo 'No';
         else
             echo 'Yes';
+        
+    }
+    
+}
+
+/**
+ * Admin List Row Actions
+ */
+add_filter('post_row_actions','acfe_dop_admin_row', 10, 2);
+function acfe_dop_admin_row($actions, $post){
+
+    if($post->post_type != 'acfe-dop' || $post->post_status != 'publish')
+        return $actions;
+    
+    $name = get_field('acfe_dop_name', $post_id);
+    
+    $actions['acfe_dpt_export_json'] = '<a href="' . admin_url('edit.php?post_type=acf-field-group&page=acf-tools&tool=acfe_tool_dop_export&keys=' . $name) . '">' . __('Json') . '</a>';
+    
+    return $actions;
+    
+}
+
+/**
+ * Admin Disable Name
+ */
+add_filter('acf/prepare_field/name=acfe_dop_name', 'acfe_dop_admin_disable_name');
+function acfe_dop_admin_disable_name($field){
+    
+    global $pagenow;
+    if($pagenow != 'post.php')
+        return $field;
+    
+    $field['disabled'] = true;
+    
+    return $field;
+    
+}
+
+/**
+ * Admin Force Name
+ */
+add_action('load-edit.php', 'acfe_dop_admin_name_value');
+function acfe_dop_admin_name_value(){
+    
+    // Get post type
+    global $typenow;
+    
+    // Check post type
+    $post_type = $typenow;
+    if(empty($post_type) || $post_type != 'acfe-dop')
+        return;
+    
+    $get_options = get_posts(array(
+        'post_type'         => 'acfe-dop',
+        'posts_per_page'    => -1,
+        'fields'            => 'ids'
+    ));
+    
+    if(empty($get_options))
+        return;
+    
+    foreach($get_options as $post_id){
+        
+        if(get_field('acfe_dop_name', $post_id))
+            continue;
+        
+        update_field('acfe_dop_name', sanitize_title(get_field('page_title', $post_id)), $post_id);
         
     }
     
@@ -402,6 +463,28 @@ function acfe_dop_local_field_group(){
                 'name' => 'page_title',
                 'type' => 'text',
                 'instructions' => '(string) The title displayed on the options page. Required.',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'acfe_validate' => '',
+                'acfe_update' => '',
+                'acfe_permissions' => '',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'maxlength' => '',
+            ),
+            array(
+                'key' => 'field_acfe_dop_name',
+                'label' => 'Name',
+                'name' => 'acfe_dop_name',
+                'type' => 'acfe_slug',
+                'instructions' => '(string) Options page slug. Must be unique',
                 'required' => 1,
                 'conditional_logic' => 0,
                 'wrapper' => array(

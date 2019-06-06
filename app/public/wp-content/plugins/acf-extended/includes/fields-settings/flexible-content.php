@@ -75,13 +75,36 @@ function acfe_flexible_settings($field){
         'label'         => __('Layouts Thumbnails'),
         'name'          => 'acfe_flexible_layouts_thumbnails',
         'key'           => 'acfe_flexible_layouts_thumbnails',
-        'instructions'  => __('Display thumbnails for each layout. You need to save the field group to take effect'),
+        'instructions'  => __('Display thumbnails for each layout. You need to save the field group to display it'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
         'ui'                => true,
         'ui_on_text'        => '',
         'ui_off_text'       => '',
+    ), true);
+    
+    // Layouts preview
+    acf_render_field_setting($field, array(
+        'label'         => __('Layouts Thumbnails as Preview'),
+        'name'          => 'acfe_flexible_layouts_previews',
+        'key'           => 'acfe_flexible_layouts_previews',
+        'instructions'  => __('Use thumbnails as preview in the post administration screen'),
+        'type'              => 'true_false',
+        'message'           => '',
+        'default_value'     => false,
+        'ui'                => true,
+        'ui_on_text'        => '',
+        'ui_off_text'       => '',
+        'conditional_logic' => array(
+            array(
+                array(
+                    'field'     => 'acfe_flexible_layouts_thumbnails',
+                    'operator'  => '==',
+                    'value'     => '1',
+                )
+            )
+        )
     ), true);
     
     // Layouts render
@@ -89,7 +112,7 @@ function acfe_flexible_settings($field){
         'label'         => __('Layouts Render'),
         'name'          => 'acfe_flexible_layouts_templates',
         'key'           => 'acfe_flexible_layouts_templates',
-        'instructions'  => __('Display PHP template, style & javascript includes fields. You need to save the field group to take effect'),
+        'instructions'  => __('Display PHP template, style & javascript layouts settings. You need to save the field group to display them'),
         'type'              => 'true_false',
         'message'           => '',
         'default_value'     => false,
@@ -98,12 +121,26 @@ function acfe_flexible_settings($field){
         'ui_off_text'       => '',
     ), true);
     
-    // Modal
+    // Modal: Edition
     acf_render_field_setting($field, array(
-        'label'         => __('Modal'),
+        'label'         => __('Modal: Edition'),
+        'name'          => 'acfe_flexible_modal_edition',
+        'key'           => 'acfe_flexible_modal_edition',
+        'instructions'  => __('Edit layout content in a modal'),
+        'type'              => 'true_false',
+        'message'           => '',
+        'default_value'     => false,
+        'ui'                => true,
+        'ui_on_text'        => '',
+        'ui_off_text'       => '',
+    ), true);
+    
+    // Modal: Selection
+    acf_render_field_setting($field, array(
+        'label'         => __('Modal: Selection'),
         'name'          => 'acfe_flexible_modal',
         'key'           => 'acfe_flexible_modal',
-        'instructions'  => __('Use modal for layout selection'),
+        'instructions'  => __('Select layouts in a modal'),
         'type'          => 'group',
         'layout'        => 'block',
         'sub_fields'    => array(
@@ -191,7 +228,7 @@ function acfe_flexible_settings($field){
                 'instructions'  => false,
                 'required'      => false,
                 'wrapper'       => array(
-                    'width' => '15',
+                    'width' => '25',
                     'class' => '',
                     'id'    => '',
                 ),
@@ -219,6 +256,15 @@ function acfe_flexible_settings($field){
         'choices'       => array(
             'collapse'  => 'Collapsed',
             'open'      => 'Opened',
+        ),
+        'conditional_logic' => array(
+            array(
+                array(
+                    'field'     => 'acfe_flexible_modal_edition',
+                    'operator'  => '!=',
+                    'value'     => '1',
+                )
+            )
         )
     ), true);
     
@@ -392,7 +438,14 @@ function acfe_flexible_wrapper($wrapper, $field){
         
     }
     
-    // Modal
+    // Modal: Edition
+    if(isset($field['acfe_flexible_modal_edition']) && !empty($field['acfe_flexible_modal_edition'])){
+        
+        $wrapper['data-acfe-flexible-modal-edition'] = 1;
+    
+    }
+    
+    // Modal: Selection
     if(isset($field['acfe_flexible_modal']['acfe_flexible_modal_enabled']) && !empty($field['acfe_flexible_modal']['acfe_flexible_modal_enabled'])){
         
         $wrapper['data-acfe-flexible-modal'] = 1;
@@ -423,6 +476,42 @@ function acfe_flexible_wrapper($wrapper, $field){
             $wrapper['data-acfe-flexible-open'] = 1;
             
         }
+        
+    }
+    
+    $thumbnails = array();
+    
+    // Layouts Previews
+    if(isset($field['acfe_flexible_layouts_thumbnails']) && !empty($field['acfe_flexible_layouts_thumbnails']) && isset($field['acfe_flexible_layouts_previews']) && !empty($field['acfe_flexible_layouts_previews'])){
+        
+        $thumbnails = array();
+        
+        if(isset($field['layouts']) && !empty($field['layouts'])){
+            
+            foreach($field['layouts'] as $layout){
+                
+                if(!isset($layout['acfe_flexible_thumbnail']) || empty($layout['acfe_flexible_thumbnail']))
+                    continue;
+                
+                // Thumbnail exists
+                if($thumbnail_src = wp_get_attachment_url($layout['acfe_flexible_thumbnail'])){
+                    
+                    $thumbnails[$layout['name']] = $thumbnail_src;
+                    
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+    $thumbnails = apply_filters("acfe/flexible/previews/name={$field['_name']}", $thumbnails, $field);
+    $thumbnails = apply_filters("acfe/flexible/previews/key={$field['key']}", $thumbnails, $field);
+    
+    if(is_array($thumbnails) && !empty($thumbnails)){
+        
+        $wrapper['data-acfe-flexible-preview'] = json_encode($thumbnails);
         
     }
     
@@ -505,5 +594,38 @@ function acfe_flexible_layout_title_remove($title, $field, $layout, $i){
     $title = preg_replace('/<\/?div[^>]*\>/i', '', $title);
     
     return $title;
+    
+}
+
+add_action('wp_ajax_acfe/flexible/layout_preview', 'acfe_flexible_layout_preview');
+function acfe_flexible_layout_preview(){
+    
+    // Options
+    $options = acf_parse_args( $_POST, array(
+        'post_id'		=> 0,
+        'i'				=> 0,
+        'field_key'		=> '',
+        'nonce'			=> '',
+        'layout'		=> '',
+        'value'			=> array()
+    ));
+    
+    // Load field
+    $field = acf_get_field($options['field_key']);
+    if(!$field)
+        die;
+    
+    // Get Flexible
+    $flexible = acf_get_field_type('flexible_content');
+    
+    // Vars
+    $layout = $flexible->get_layout($options['layout'], $field );
+    if(!$layout)
+        die;
+    
+    // Do action
+    do_action('acfe/flexible/layout_preview', $field, $layout, $options['i'], $options['value']);
+    
+    die;
     
 }

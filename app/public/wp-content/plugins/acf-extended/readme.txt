@@ -5,7 +5,7 @@ Tags: acf, custom fields, meta, admin, fields, form, repeater, content
 Requires at least: 4.9
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 0.7.0.3
+Stable tag: 0.7.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -137,6 +137,7 @@ Create and manage post types from your WordPress administration (Tools > Post Ty
 * Manage Posts per page, order by and order for the post type administration screen
 * Set custom single template (ie: `my-single.php`) instead of the native `single-{post_type}.php`
 * Set custom archive template (ie: `my-archive.php`) instead of the native `archive-{post_type}.php`
+* Manual Import & Export is available in the ACF > Tools page
 
 = WordPress: Dynamic Taxonomies =
 
@@ -145,6 +146,7 @@ Create and manage taxonomies from your WordPress administration (Tools > Taxonom
 * Manage Posts per page, order by and order for the taxonomy term archive
 * Manage Posts per page, order by and order for the taxonomy administration screen
 * Set custom taxonomy template (ie: `my-taxonomy.php`) instead of the native `taxonomy-{taxonomy}.php`
+* Manual Import & Export is available in the ACF > Tools page
 
 = WordPress: Ajax Author Box =
 
@@ -159,7 +161,7 @@ Taxonomies list & edit views have been enhanced for a more consistent administra
 Manage WordPress options from Settings > Options.
 
 * View, add, edit and delete options
-* Working with strings and serialized values
+* Working with strings, serialized & Json values
 
 = ACF: Options Pages =
 
@@ -167,6 +169,7 @@ Manage ACF Options Pages from ACF > Options.
 
 * View, add, edit and delete options pages
 * All arguments are available
+* Manual Import & Export is available in the ACF > Tools page
 
 = ACF: Block Types (Gutenberg) =
 
@@ -174,19 +177,24 @@ Manage ACF Block Types from ACF > Block Types.
 
 * View, add, edit and delete Block Types
 * All arguments are available
+* Manual Import & Export is available in the ACF > Tools page
 * Requires ACF Pro 5.8
 
 = ACF: Flexible Content Enhancement =
 
+* Controls: Copy, Paste & Duplicate Layouts on the fly
+* Controls: Copy & Paste all layouts on the fly
 * Stylised Button: Add style to 'Add Row'
 * Hide Empty Message: Hide the native Flexible Content 'Empty' message
 * Empty Message: Change the native Flexible Content 'Click the Add Row button below...' message
 * Layouts Thumbnails: Add thumbnails for each layout in the layout selection
+* Layouts Previews: Use thumbnails as layout preview (replace the native collapsed status)
 * Layouts Render: Add `template.php`, `style.css` & `script.js` files settings for each layout. Those settings can be then accessed in the front-end ([More informations in the FAQ](#faq))
-* Modal: Change the layout selection into a proper modal in the administration
-* Modal: Title: Change the layout modal title
-* Modal: Columns: Change the layout modal columns grid. 1, 2, 3, 4, 5 or 6 columns available
-* Modal: Categories: Add category for each layout in the layout modal
+* Modal Edition: Edit layouts in a modal
+* Modal Selection: Change the layout selection into a modal
+* Modal Selection Title: Change the layout modal title
+* Modal Selection Columns: Change the layout modal columns grid. 1, 2, 3, 4, 5 or 6 columns available
+* Modal Selection Categories: Add category for each layout in the layout modal
 * Layouts State: Force layouts to be collapsed or opened by default
 * Button Label: Natively supports Dashicons HTML `<span>`
 * One click: the 'Add row' button will add a layout without the selection modal if there is only one layout available in the flexible content
@@ -196,12 +204,16 @@ Manage ACF Block Types from ACF > Block Types.
 * Thanks to [Brandon A.](https://twitter.com/AsmussenBrandon) for his support & tests
 * Thanks to [Damien C.](https://twitter.com/DamChtlv) for his support & tests
 * Thanks to [Valentin P.](https://twitter.com/Val_Pellegrin) for his support & tests
+* Thanks to Damian P. for his support & tests
+* Thanks to [Jaakko S.](https://twitter.com/jsaarenk) for his support & tests
+* Thanks to [Renan A.](https://twitter.com/altendorfme) for his support & tests
 
 == 🛠️ Links ==
 
 * Found a bug? [Submit a ticket](https://wordpress.org/support/plugin/acf-extended)
 * Enjoying this plugin? [Submit a review](https://wordpress.org/support/plugin/acf-extended/reviews/#new-post)
 * Want to keep me awake? [Buy me a coffee](https://ko-fi.com/acfextended)
+* Want to check upcoming features? [Here is my Twitter](https://twitter.com/hwkfr)
 
 == Installation ==
 
@@ -248,15 +260,38 @@ Usage example:
 
 * The page is now also saved in the said post relationship field
 
-= How to use Flexible Content templates, styles & scripts? =
+= How to use Flexible Content: Templates, Styles & Scripts render? =
 
 Templates, styles & scripts settings are saved in each layouts. They can be accessed manually via `get_field('my_flexible')` for example.
 
-The settings use the following keys: `acfe_flexible_render_template`, `acfe_flexible_render_style` and `acfe_flexible_render_script`.
+The settings are saved in the following keys: `acfe_flexible_render_template`, `acfe_flexible_render_style` and `acfe_flexible_render_script`.
 
 ACF Extended has two functions which will automatically include those files: `get_flexible($selector, $post_id)` and `the_flexible($selector, $post_id)` (`$post_id` is optional).
 
 Usage example: `echo get_flexible('my_flexible');`.
+
+= How to override Flexible Content: Layouts Previews images? =
+
+It is possible to override the Layouts Previews images using the following filter: `filter('acfe/flexible/previews/name=$field_name', $thumbnails, $field)`.
+
+Usage example:
+
+`
+// My Flexible Content Field name is 'my_flexible'
+add_filter('acfe/flexible/previews/name=my_flexible', 'acf_override_layouts_previews', 10, 2);
+function acf_override_layouts_previews($thumbnails, $field){
+    
+    // My Layout name is 'columns'
+    $thumbnails['columns'] = 'https://www.example.com/flexible-preview.jpg';
+    
+    return $thumbnails;
+    
+}
+`
+
+Note: The field setting 'Layouts Previews' is optional. You can still use this filter without activating it.
+
+Note (2): The image container has a default background color set to: `#fafafa`. If you would like to use an another background color, you will have to add a CSS rule targeting the following class: `.acfe-flexible-collapsed-preview`.
 
 == Screenshots ==
 
@@ -273,9 +308,53 @@ Usage example: `echo get_flexible('my_flexible');`.
 
 == Changelog ==
 
+= 0.7.5.5 =
+* Field: Flexible Content - Completely revamped Flexible Content JavaScript for a more solid & optimized code
+* Field: Flexible Content - Automatically scroll to the layout position when adding a new layout
+* Field: Flexible Content - Automatically open layout edition modal when adding a new layout
+* Field: Flexible Content - Added 'Close' (collapse) button at the bottom of layout when opened
+* Field: Flexible Content - Fixed typo error in the 'Paste Layouts' prompt
+* Field: Flexible Content - Added Flexbox CSS compatibility
+* Field: Flexible Content - Better Multi Modal Handling (modal inside a modal inside a modal...)
+* Field: Flexible Content - Better Field Validation Handling inside layouts
+* Field: Flexible Content - Added `has_flexible($field_name, $post_id)` front-end function to check if rows exists
+* Field: Flexible Content Control - Automatically scroll to the new layout position when using 'Clone Layout'
+* Field: Flexible Content Control - Fixed 'Clone Layout' when an already cloned layout had an 'Editor' field
+* Field: Flexible Content Control - Fixed 'Clone Layout' unwanted icon when a layout had an 'Accordion' field
+* Field: Advanced Validation/Update - The settings are now hidden on non-necessary fields (Clone, Flexible content, Tabs etc...)
+* Module: Dynamic Options Pages - Now forces a unique slug to avoid duplication
+* Module: Dynamic Post Types/Taxonomies/Options Pages & Block Types - Manual Json export has been removed from possible actions on the trashed status screen
+* Module: Options - Fixed a CSS enqueue problem introduced in last patch
+* Location: Post Type Archive & Taxonomy Archive options now use ACF multi-languages settings
+* General: Removed jQuery UI & jQuery UI Dialog dependency (ACF Extended now uses its own lightweight modal system)
+
+= 0.7.5 =
+* Field: Flexible Content - Added 'Control': Copy, Paste & Duplicate Layouts on the fly using icons in the layouts handle
+* Field: Flexible Content - Control: Copy & Paste all layouts on the fly using the new icon next to 'Add row' button (can be used to transfer layout data from one page to an another)
+* Field: Flexible Content - Added 'Modal: Edition' setting, allowing to edit layouts in a modal
+* Field: Flexible Content - Added 'Layouts Previews' setting, allowing to display the layout thumbnail as preview (collapsed state)
+* Field: Flexible Content - Added `filter('acfe/flexible/previews/name=$field_name', $thumbnails, $field)` allowing to override the preview image for each layout (usage example is available in the FAQ)
+* Field: Flexible Content - Added `filter('acfe/flexible/previews/key=$field_key', $thumbnails, $field)` allowing to override the preview image for each layout (usage example is available in the FAQ)
+* Field: Flexible Content - When using `get_flexible()`, `get_query_var('acf_flexible_field')` & `get_query_var('acf_flexible_layout')` can be used in the template file to retrieve current field & layout informations
+* Field: Flexible Content - When using `get_flexible()`, an HTML comment has been added for each rendered templates
+* Field: Flexible Content - Fixed the possibility to render the same layout multiple times when using `get_flexible()` (thanks to @Val_Pellegrin)
+* Field: Flexible Content - `get_flexible()` now enqueue each style.css & script.js only one time on the whole page
+* Field: Flexible Content - Added more width spacing for the 'Modal: Category' checkbox (compatibility for small screens)
+* Tools: Added Export & Import Tools for Dynamic Post Types, Taxonomies, Block Types & Options Pages using Json files
+* Location: Post Type Archive & Taxonomy Archive now use field group location (High, Normal or Side) & field group style (WP Box or seamless) (Feature Request)
+* Module: Taxonomy - Added some spacing on the term edition screen (compatibility with YOAST/Rank Math metaboxes)
+* Module: Taxonomy - Fixed Edit Screen CSS for Repeaters & Groups (thanks to @Val_Pellegrin)
+* Module: Dynamic Taxonomies - Fixed 'Post Type' column when a post type does not exists anymore (thanks to @Val_Pellegrin)
+* Module: Dynamic Taxonomies - Fixed Single Posts per page, Orderby & Order
+* Module: Dynamic Post Types - Fixed 'Taxonomies' column when a taxonomy does not exists anymore (thanks to @Val_Pellegrin)
+* Module: Dynamic Post Types & Taxonomies - Fixed Admin Orderby, Order & Menu position which weren't working properly (thanks to @Val_Pellegrin)
+* Module: Dynamic Post Types & Taxonomies - Fixed user Posts per page, Orderby & Order option screen which were forced (thanks to @Val_Pellegrin)
+* Field Groups: Hide 'Category' column if there's no term
+* Misc: Added 'Advanced Custom Fields' tab in the WP 'Add plugin' page
+
 = 0.7.0.3 =
-* Field: Flexible Content - 'Modal: Title' - The custom modal title now works correctly
-* Field: Flexible Content - 'Layouts State' - Fixed a problem where layouts title were incorrect when forcing layouts state
+* Field: Flexible Content - 'Modal: Title' - The custom modal title now works correctly (thanks to Damian P.)
+* Field: Flexible Content - 'Layouts State' - Fixed a problem where layouts title were incorrect when forcing layouts state (thanks to Damian P.)
 * Compatibility: ACF Pro 5.7.13 - Fixed Archive Location 'All' PHP error (acf/location/rule_match filter)
 
 = 0.7 =
