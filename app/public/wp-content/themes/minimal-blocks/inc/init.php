@@ -32,7 +32,7 @@ require get_template_directory() . '/inc/customizer/view.php';
 /**
  * Load Jetpack compatibility file.
  */
-if ( defined( 'JETPACK__VERSION' ) ) {
+if (defined('JETPACK__VERSION')) {
     require get_template_directory() . '/inc/jetpack.php';
 }
 
@@ -80,7 +80,18 @@ require get_template_directory() . '/inc/ocdi.php';
 /**
  * Load about.
  */
-if ( is_admin() ) {
-    require_once trailingslashit( get_template_directory() ) . 'inc/about/class.about.php';
-    require_once trailingslashit( get_template_directory() ) . 'inc/about/about.php';
+if (is_admin()) {
+    require_once trailingslashit(get_template_directory()) . 'inc/about/class.about.php';
+    require_once trailingslashit(get_template_directory()) . 'inc/about/about.php';
 }
+
+// Custom
+require get_template_directory() . '/library/wp-async/wp-async-request.php';
+require get_template_directory() . '/library/wp-async/wp-background-process.php';
+
+include get_template_directory() . '/library/post-types/post-types.php';
+include get_template_directory() . '/library/post-types/taxonomy.php';
+include get_template_directory() . '/library/post-types/taxonomy-terms.php';
+include get_template_directory() . '/library/acf/acf-plugins.php';
+
+include get_template_directory() . '/library/acf/update-child-posts.php';

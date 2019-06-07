@@ -7,9 +7,6 @@
  * @package Minimal_Blocks
  */
 
-require get_template_directory() . '/library/wp-async-request.php';
-require get_template_directory() . '/library/wp-background-process.php';
-
 if (!function_exists('minimal_blocks_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -344,10 +341,3 @@ add_filter('woocommerce_get_image_size_gallery_thumbnail', function ($size) {
         'crop' => 1,
     );
 });
-
-include get_template_directory() . '/post-types/post-types.php';
-include get_template_directory() . '/post-types/taxonomy.php';
-include get_template_directory() . '/post-types/taxonomy-terms.php';
-include get_template_directory() . '/acf/acf-plugins.php';
-
-include get_template_directory() . '/acf/update-child-posts.php';
